@@ -52,7 +52,8 @@ function App() {
         'drizzle',
         'mist',
         'rain',
-        'clouds'
+        'clouds',
+        'fog'
       );
   
       // Add new weather class based on the weather description
