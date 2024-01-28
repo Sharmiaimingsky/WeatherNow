@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Condensed:wght@300;400;700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  background: url('./assets/icons/sunset.jpg') no-repeat center center/cover;
+}
+body.clear {
+  background-image: url('./assets/img/clear.jpg');
+}
+
+body.sunny {
+  background-image: url('./assets/img/sunny.jpg');
+}
+
+body.smoke {
+  background-image: url('./assets/img/smoke.jpg');
+}
+body.haze {
+  background-image: url('./assets/img/smoke.jpg');
+}
+
+body.snow {
+  background-image: url('./assets/img/snow.jpg');
+}
+
+body.thunderstorm {
+  background-image: url('./assets/img/thunderstrom.jpg');
+}
+
+body.drizzle {
+  background-image: url('./assets/img/drizzle.jpg');
+}
+
+body.mist {
+  background-image: url('./assets/img/mist.jpg');
+}
+
+body.rain {
+  background-image: url('./assets/img/rain.jpg');
+}
+
+body.cloudy {
+  background-image: url('./assets/img/clouds.jpg');
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
