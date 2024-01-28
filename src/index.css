@@ -9,12 +9,14 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   min-height: 100vh;
-  background: url('./assets/icons/sunset.jpg') no-repeat center center/cover;
+  background: url('./assets/img/bg.jpg') no-repeat center center/cover;
 }
 body.clear {
   background-image: url('./assets/img/clear.jpg');
 }
-
+body.fog {
+  background-image: url('./assets/icons/sunset.jpg');
+}
 body.sunny {
   background-image: url('./assets/img/sunny.jpg');
 }
