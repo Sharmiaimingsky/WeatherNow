@@ -16,6 +16,7 @@ import {
   getTodayForecastWeather,
   getWeekForecastWeather,
 } from './utilities/DataUtils';
+import { getPoemOrQuote } from './api/GeminiApiService'; // Import the Gemini API service
 
 function App() {
   const [todayWeather, setTodayWeather] = useState(null);
@@ -23,6 +24,7 @@ function App() {
   const [weekForecast, setWeekForecast] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [poemOrQuote, setPoemOrQuote] = useState('');
 
   const searchChangeHandler = async (enteredData) => {
     const [latitude, longitude] = enteredData.value.split(' ');
@@ -76,6 +78,21 @@ function App() {
     }
 
     setIsLoading(false);
+    try {
+      const [todayWeatherResponse, weekForecastResponse] = await fetchWeatherData(latitude, longitude);
+      
+      // Existing weather data logic...
+    
+      const weatherDescription = todayWeatherResponse.weather[0].main.toLowerCase();
+    
+      // Fetch dynamic poem/quote
+      const poem = await getPoemOrQuote(weatherDescription, enteredData.label);
+      setPoemOrQuote(poem);
+    
+    } catch (error) {
+      setError(true);
+    }
+    
   };
 
   let appContent = (
@@ -228,6 +245,26 @@ function App() {
               />
             </Link>
           </Box>
+          {poemOrQuote && (
+  <Grid item xs={12} mt={3}>
+    <Box
+      sx={{
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        padding: '1.5rem',
+        borderRadius: '10px',
+        color: '#fff',
+        fontFamily: 'Georgia, serif',
+        fontStyle: 'italic',
+        boxShadow: '0 0 10px rgba(0,0,0,0.2)'
+      }}
+    >
+      <Typography variant="body1" textAlign="center">
+        {poemOrQuote}
+      </Typography>
+    </Box>
+  </Grid>
+)}
+
           <Search onSearchChange={searchChangeHandler} />
         </Grid>
         {appContent}
