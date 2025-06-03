@@ -1,2 +1,2 @@
 # WeatherNow
-A weather forecasting website
+A weather forecasting website using React and OPENWeatherAPI
